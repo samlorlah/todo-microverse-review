@@ -26,3 +26,39 @@ document.body.innerHTML = `
 
 const todos = new Todos();
 todos.getTasks = getTasksMock;
+
+describe('todo test', () => {
+  window.localStorage = Storage.prototype;
+  test('add new task/item to todo', () => {
+    const item = {
+      description: 'Test item',
+      completed: false,
+      index: 1,
+    };
+    const item2 = {
+      description: 'Test Item 2',
+      completed: false,
+      index: 2,
+    };
+    const item3 = {
+      description: 'Test Item 3',
+      completed: false,
+      index: 3,
+    };
+    const item4 = {
+      description: 'Test Item 4',
+      completed: false,
+      index: 4,
+    };
+
+    todos.addTask(item);
+    expect(todos.tasks).toHaveLength(1);
+    todos.addTask(item2);
+    expect(todos.tasks).toHaveLength(2);
+    todos.addTask(item3);
+    expect(todos.tasks).toHaveLength(3);
+    todos.addTask(item4);
+    expect(todos.tasks).toHaveLength(4);
+  });
+
+});
