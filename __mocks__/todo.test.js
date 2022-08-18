@@ -1,9 +1,9 @@
 /**
-* @jest-environment jsdom
-*/
+ * @jest-environment jsdom
+ */
 
 import Todos from '../src/todo.js';
-const getTasksMock = jest.fn().mockReturnValue(''); 
+const getTasksMock = jest.fn().mockReturnValue('');
 
 document.body.innerHTML = `
   <section>
@@ -57,8 +57,6 @@ describe('todo test', () => {
     todos.addTask(item3);
     expect(todos.tasks).toHaveLength(3);
     todos.addTask(item4);
-
-  
   });
 
   test('remove task', () => {
