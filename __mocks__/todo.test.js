@@ -26,4 +26,3 @@ document.body.innerHTML = `
 
 const todos = new Todos();
 todos.getTasks = getTasksMock;
-
