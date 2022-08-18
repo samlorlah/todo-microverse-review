@@ -55,6 +55,9 @@ describe('todo test', () => {
     expect(todos.tasks).toHaveLength(1);
     todos.addTask(item2);
     expect(todos.tasks).toHaveLength(2);
+    todos.addTask(item3);
+    expect(todos.tasks).toHaveLength(3);
+    todos.addTask(item4);
 
   
   });
