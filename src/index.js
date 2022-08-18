@@ -1,3 +1,3 @@
 import './todo.js';
 import './style.css';
-import './todoEvent.js'
+import './todoEvent.js';

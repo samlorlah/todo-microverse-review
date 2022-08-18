@@ -3,6 +3,7 @@
  */
 
 import Todos from '../src/todo.js';
+
 const getTasksMock = jest.fn().mockReturnValue('');
 
 document.body.innerHTML = `

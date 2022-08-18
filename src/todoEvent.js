@@ -1,4 +1,4 @@
-import Todos from './todo.js'
+import Todos from './todo.js';
 
 const todoInput = document.querySelector('.todo-input');
 const addTodoBtn = document.querySelector('#todo-add-btn');
