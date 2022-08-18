@@ -50,7 +50,6 @@ describe('todo test', () => {
       completed: false,
       index: 4,
     };
-
     todos.addTask(item);
     expect(todos.tasks).toHaveLength(1);
     todos.addTask(item2);
@@ -62,4 +61,22 @@ describe('todo test', () => {
   
   });
 
+  test('remove task', () => {
+    const newTask = {
+      description: 'Test Item 5',
+      completed: false,
+      index: 5,
+    };
+    todos.addTask(newTask);
+    expect(todos.tasks).toHaveLength(5);
+
+    const removeTask = {
+      description: 'Test Item 3',
+      completed: false,
+      index: 3,
+    };
+    todos.removeTask(removeTask);
+    expect(todos.tasks[2].description).toBe('Test Item 4');
+    expect(todos.tasks).toHaveLength(4);
+  });
 });
