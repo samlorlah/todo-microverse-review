@@ -135,4 +135,3 @@ describe('clear all completed tasks test', () => {
     expect(todos.tasks[2].completed).toBeFalsy();
   });
 });
-
