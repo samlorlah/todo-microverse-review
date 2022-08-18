@@ -111,3 +111,28 @@ describe('update completed test', () => {
     expect(todos.tasks).toHaveLength(5);
   });
 });
+
+describe('clear all completed tasks test', () => {
+  test('clear all completed', () => {
+    const selectedTask = {
+      description: 'Test Item 2',
+      completed: false,
+      index: 2,
+    };
+
+    const selectedTask2 = {
+      description: 'Test Item 6',
+      completed: false,
+      index: 6,
+    };
+
+    todos.handleCompleted(selectedTask);
+    todos.handleCompleted(selectedTask2);
+    todos.clearAllCompleted();
+    expect(todos.tasks).toHaveLength(3);
+    expect(todos.tasks[0].completed).toBeFalsy();
+    expect(todos.tasks[1].completed).toBeFalsy();
+    expect(todos.tasks[2].completed).toBeFalsy();
+  });
+});
+
