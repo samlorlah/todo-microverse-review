@@ -94,3 +94,20 @@ describe('edit task test', () => {
     expect(todos.tasks).toHaveLength(4);
   });
 });
+
+describe('update completed test', () => {
+  test('update completed', () => {
+    const newTask = {
+      description: 'Test Item 6',
+      completed: false,
+      index: 6,
+    };
+
+    todos.addTask(newTask);
+    todos.handleCompleted(newTask);
+    expect(todos.tasks[4].completed).toBeTruthy();
+    todos.handleCompleted(newTask);
+    expect(todos.tasks[4].completed).toBeFalsy();
+    expect(todos.tasks).toHaveLength(5);
+  });
+});
