@@ -80,3 +80,17 @@ describe('add and remove tasks test', () => {
   });
 });
 
+describe('edit task test', () => {
+  test('edit task', () => {
+    const selectedTask = {
+      description: 'Test Item 2',
+      completed: false,
+      index: 2,
+    };
+    const text = 'Edited Text';
+
+    todos.editTask(selectedTask, text);
+    expect(todos.tasks[1].description).toBe('Edited Text');
+    expect(todos.tasks).toHaveLength(4);
+  });
+});
